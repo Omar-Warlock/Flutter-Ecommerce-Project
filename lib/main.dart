@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/admin_login.dart';
+import 'package:flutter_application_1/admin/home_admin.dart';
 import 'package:flutter_application_1/pages/bottomnav.dart';
 import 'package:flutter_application_1/pages/home.dart';
 import 'package:flutter_application_1/pages/login.dart';
 import 'package:flutter_application_1/pages/onboard.dart';
 import 'package:flutter_application_1/pages/signup.dart';
+import 'package:flutter_application_1/widget/app_constant.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() {
   runApp(const MyApp());
+  Stripe.publishableKey=publishableKey;
 }
 
 class MyApp extends StatelessWidget {
@@ -35,7 +40,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: BottomNav(),
+      home: HomeAdmin(),
     );
   }
 }
