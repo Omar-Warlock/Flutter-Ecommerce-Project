@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Onboard(),  // Make sure this is your starting page
+      home: BottomNav(),  // Make sure this is your starting page
     );
   }
 }
