@@ -1,15 +1,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/admin_login.dart';
 import 'package:flutter_application_1/pages/bottomnav.dart'; // Adjust to your actual path
 import 'package:flutter_application_1/pages/home.dart'; // Adjust to your actual path
 import 'package:flutter_application_1/pages/login.dart'; // Adjust to your actual path
 import 'package:flutter_application_1/pages/onboard.dart'; // Adjust to your actual path
-import 'package:flutter_application_1/pages/signup.dart'; // Adjust to your actual path
+import 'package:flutter_application_1/pages/signup.dart';
+import 'package:flutter_application_1/widget/app_constant.dart';
+import 'package:flutter_stripe/flutter_stripe.dart'; // Adjust to your actual path
 
 void main() async {
   // Ensure that Firebase is initialized before the app starts
   WidgetsFlutterBinding.ensureInitialized();
-  
   // Initialize Firebase with the provided configuration
   await Firebase.initializeApp(
     options: FirebaseOptions(
@@ -34,10 +36,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: BottomNav(),  // Make sure this is your starting page
+      home: BottomNav(), // Make sure this is your starting page
     );
   }
 }
