@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/admin/add_food.dart';
 class HomeAdmin extends StatefulWidget {
   const HomeAdmin({super.key});
 
@@ -15,10 +16,32 @@ class _HomeAdminState extends State<HomeAdmin> {
         child: Column(
           children: [
             Center(child: Text("Home Admin",style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold) ,),),
-            Material(
-              elevation: 10.0,
-              borderRadius:BorderRadius.circular(10) ,
-              child: ,
+            SizedBox(height: 50.0,),
+           
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AddFood()));
+              },
+              child: Material(
+                elevation: 10.0,
+                borderRadius:BorderRadius.circular(10) ,
+                child:Center(
+                  child: Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(10),
+              
+                    ),
+                    child: Row(children: [
+                      Padding(padding: EdgeInsets.all(6.0),
+                      child: Image.asset("Images/my_food.png",height:100 ,width: 100,fit: BoxFit.cover,),),
+                      SizedBox(width: 30.0,),
+                      Text("Add Food Items",style: TextStyle(color: Colors.white,fontSize: 20.0,fontWeight: FontWeight.bold),)
+                    ],),
+                  ),
+                ) ,
+              ),
             )
           ],
         ),
